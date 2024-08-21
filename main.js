@@ -14,8 +14,8 @@ import {getViewStateForLocations} from "@flowmap.gl/data";
 import {csv} from "d3-fetch";
 import maplibregl from "maplibre-gl";
 
-const MAPLIBRE_STYLE =
-  "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
+const MAPLIBRE_STYLE = "";
+  #"https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
 // Typing data
 const DATA_PATH = `https://raw.githubusercontent.com/binarybottle/typing-data/main`;
