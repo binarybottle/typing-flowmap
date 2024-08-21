@@ -1,6 +1,8 @@
 /*
  * Copyright (c) Flowmap.gl contributors
  * SPDX-License-Identifier: MIT
+ *
+ * Forked and modified by Arno Klein (binarybottle.com)
  */
 
 import {Deck} from "@deck.gl/core";
@@ -13,7 +15,7 @@ const MAPLIBRE_STYLE =
   "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
 // BIXI rides
-const DATA_PATH = `https://gist.githubusercontent.com/ilyabo/68d3dba61d86164b940ffe60e9d36931/raw/a72938b5d51b6df9fa7bba9aa1fb7df00cd0f06a`;
+const DATA_PATH = `https://gist.githubusercontent.com/binarybottle/137ac0ac1fec1362b09f938ddf179560/raw/73f4e51110202fbbd0c03b5505bb611ea941adcd/typing-speed-flowmap-data`;
 
 async function fetchData() {
   return await Promise.all([
