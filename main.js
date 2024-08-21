@@ -2,6 +2,9 @@
  * Copyright (c) Flowmap.gl contributors
  * SPDX-License-Identifier: MIT
  *
+ * Flowmap.gl: https://github.com/visgl/flowmap.gl
+ * Flowmap.gl pure JS example: https://github.com/ilyabo/flowmap.gl-purejs-example
+ * Data are in https://github.com/binarybottle/typing-data/.
  * Forked and modified by Arno Klein (binarybottle.com)
  */
 
@@ -14,18 +17,17 @@ import maplibregl from "maplibre-gl";
 const MAPLIBRE_STYLE =
   "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
-// BIXI rides
-const DATA_PATH = `https://gist.githubusercontent.com/binarybottle/137ac0ac1fec1362b09f938ddf179560/raw/73f4e51110202fbbd0c03b5505bb611ea941adcd/typing-speed-flowmap-data`;
-
+// Typing data
+const DATA_PATH = `https://raw.githubusercontent.com/binarybottle/typing-data/main`;
 async function fetchData() {
   return await Promise.all([
-    csv(`${DATA_PATH}/locations.csv`, (row, i) => ({
+    csv(`${DATA_PATH}/key-locations.csv`, (row, i) => ({
       id: row.id,
       name: row.name,
       lat: Number(row.lat),
       lon: Number(row.lon),
     })),
-    csv(`${DATA_PATH}/flows.csv`, (row) => ({
+    csv(`${DATA_PATH}/key-pair-speed-flows.csv`, (row) => ({
       origin: row.origin,
       dest: row.dest,
       count: Number(row.count),
