@@ -21,13 +21,13 @@ const MAPLIBRE_STYLE = "";
 const DATA_PATH = `https://raw.githubusercontent.com/binarybottle/typing-data/main`;
 async function fetchData() {
   return await Promise.all([
-    csv(`${DATA_PATH}/key-locations.csv`, (row, i) => ({
+    csv(`${DATA_PATH}/locations-32keys-staggered.csv`, (row, i) => ({
       id: row.id,
       name: row.name,
       lat: Number(row.lat),
       lon: Number(row.lon),
     })),
-    csv(`${DATA_PATH}/key-pair-speed-flows.csv`, (row) => ({
+    csv(`${DATA_PATH}/key-pair-times-32keys.csv`, (row) => ({
       origin: row.origin,
       dest: row.dest,
       count: Number(row.count),
