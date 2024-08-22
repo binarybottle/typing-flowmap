@@ -27,7 +27,7 @@ async function fetchData() {
       lat: Number(row.lat),
       lon: Number(row.lon),
     })),
-    csv(`${DATA_PATH}/key-pair-times-32keys-separate-hands.csv`, (row) => ({
+    csv(`${DATA_PATH}/key-pair-times-32keys-1way-separate-hands.csv`, (row) => ({
       origin: row.origin,
       dest: row.dest,
       count: Number(row.count),
