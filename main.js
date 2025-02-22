@@ -19,6 +19,8 @@ const MAPLIBRE_STYLE = "";
 
 // Typing data
 const DATA_PATH = `https://raw.githubusercontent.com/binarybottle/typing-data/main`;
+const DATA_FILE = `key-pair-scores-to-counts-24-keys.csv`;
+
 async function fetchData() {
   return await Promise.all([
     csv(`${DATA_PATH}/locations-32keys-staggered.csv`, (row, i) => ({
@@ -27,7 +29,7 @@ async function fetchData() {
       lat: Number(row.lat),
       lon: Number(row.lon),
     })),
-    csv(`${DATA_PATH}/key-pair-times-32keys-separate-hands-1way.csv`, (row) => ({
+    csv(`${DATA_PATH}/${DATA_FILE}`, (row) => ({
       origin: row.origin,
       dest: row.dest,
       count: Number(row.count),
